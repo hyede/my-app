@@ -16,6 +16,8 @@ import {ServerURLInterceptor} from './util/http.interceptor';
 import {InterceptorService} from 'ng2-interceptors';
 import {LocalStorage} from './util/local.storage';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import {AppRoutingModule} from './app-routing.module';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
 
 export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions,serverURLInterceptor : ServerURLInterceptor) {
   let service = new InterceptorService(xhrBackend, requestOptions);
@@ -32,13 +34,15 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     HeaderComponent,
     NavSideComponent,
     ResultComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    UserRegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [{provide:'LocalStorage',useClass:LocalStorage},
     Config,

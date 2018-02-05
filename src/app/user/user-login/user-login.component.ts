@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpUtil} from '../../util/http.util';
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class UserLoginComponent implements OnInit {
 
   loginFormModel:FormGroup;
 
-  constructor(fb:FormBuilder, private httpUtil:HttpUtil) {
+  constructor(fb:FormBuilder, private router: Router,private httpUtil : HttpUtil) {
     this.loginFormModel = fb.group({
       userName: ['', [Validators.required, Validators.minLength(3)]],
       userPwd: ['', [Validators.required, Validators.minLength(6)]],
@@ -36,6 +37,7 @@ export class UserLoginComponent implements OnInit {
       console.log(this.loginFormModel.value);
       this.httpUtil.post("/accounts/login", this.loginFormModel.value).subscribe(data => {
         console.log(data);
+        // this.router.navigate(["/"]);
       });
     }
 
