@@ -1,0 +1,84 @@
+<app-nav-simple></app-nav-simple>
+<!--<div class="page-wrap w">-->
+  <!--<div class="user-con">-->
+    <!--<div class="user-title">用户登录</div>-->
+    <!--<form class="user-box" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)" >-->
+      <!--<div class="error-item">-->
+        <!--<i class="fa fa-minus-circle error-icon"></i>-->
+        <!--<p class="err-msg">未知错误</p>-->
+      <!--</div>-->
+      <!--<div class="user-item">-->
+        <!--<label class="user-label" for="username">-->
+          <!--<i class="fa fa-user"></i>-->
+        <!--</label>-->
+        <!--<input type="text" class="user-content" id="username" name="username" ngModel-->
+               <!--placeholder="请输入用户名" autocomplete="off"/>-->
+      <!--</div>-->
+      <!--<div class="user-item">-->
+        <!--<label class="user-label" for="password">-->
+          <!--<i class="fa fa-lock"></i>-->
+        <!--</label>-->
+        <!--<input type="password" class="user-content" id="password"  name="password" ngModel-->
+               <!--placeholder="请输入密码" autocomplete="off"/>-->
+      <!--</div>-->
+      <!--<div class="user-item">-->
+        <!--<label class="user-label" for="organization">-->
+          <!--<i class="fa fa-archive"></i>-->
+        <!--</label>-->
+        <!--<input type="text" class="user-content" id="organization"  name="organization" ngModel-->
+               <!--placeholder="请输入单位" autocomplete="off"/>-->
+      <!--</div>-->
+      <!--<a class="myBtn myBtn-submit" (click)="onSubmit(loginForm.value)">登录</a>-->
+      <!--<div class="link-item">-->
+        <!--<a class="link" target="_blank">忘记密码</a>-->
+        <!--<a class="link" target="_blank">免费注册</a>-->
+      <!--</div>-->
+    <!--</form>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div class="page-wrap w">
+  <div class="user-con">
+    <div class="user-title">用户登录</div>
+    <form class="user-box" [formGroup]="loginFormModel" >
+      <div class="error-item" [hidden]="loginFormModel.dirty||loginFormModel.touched">
+        <i class="fa fa-minus-circle error-icon"></i>
+        <p class="err-msg" [hidden]="!loginFormModel.hasError('required','userName')">用户名必填</p>
+        <p class="err-msg" [hidden]="!loginFormModel.hasError('minlength','userName')">用户名必须要3位以上</p>
+        <p class="err-msg" [hidden]="!loginFormModel.hasError('required','userPwd')">密码必填</p>
+        <p class="err-msg" [hidden]="!loginFormModel.hasError('minlength','userPwd')">密码必须要6位以上</p>
+        <p class="err-msg" [hidden]="!loginFormModel.hasError('required','organizationCode')">单位必填</p>
+      </div>
+      <div class="user-item">
+        <label class="user-label" for="userName">
+          <i class="fa fa-user"></i>
+        </label>
+        <input class="user-content" id="userName" formControlName="userName"
+               placeholder="请输入用户名" autocomplete="off"/>
+      </div>
+      <div class="user-item">
+        <label class="user-label" for="userPwd">
+          <i class="fa fa-lock"></i>
+        </label>
+        <input  class="user-content" id="userPwd"  name="userPwd" formControlName="userPwd"
+               placeholder="请输入密码" autocomplete="off"/>
+      </div>
+      <div class="user-item">
+        <label class="user-label" for="organizationCode">
+          <i class="fa fa-archive"></i>
+        </label>
+        <input class="user-content" id="organizationCode"  name="organizationCode" formControlName="organizationCode"
+               placeholder="请输入单位" autocomplete="off"/>
+      </div>
+      <a class="myBtn myBtn-submit" (click)="onSubmit()">登录</a>
+      <div class="link-item">
+        <a class="link" target="_blank">忘记密码</a>
+        <a class="link" target="_blank">免费注册</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
