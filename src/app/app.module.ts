@@ -18,6 +18,7 @@ import {LocalStorage} from './util/local.storage';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import {AppRoutingModule} from './app-routing.module';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserPassResetComponent } from './user/user-pass-reset/user-pass-reset.component';
 
 export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions,serverURLInterceptor : ServerURLInterceptor) {
   let service = new InterceptorService(xhrBackend, requestOptions);
@@ -35,7 +36,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     NavSideComponent,
     ResultComponent,
     UserLoginComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    UserPassResetComponent
   ],
   imports: [
     BrowserModule,

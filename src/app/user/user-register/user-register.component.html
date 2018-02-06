@@ -2,32 +2,35 @@
 <div class="page-wrap w">
   <div class="user-con">
     <div class="user-title">用户注册</div>
-    <form class="user-box" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
-      <div class="error-item">
+    <form class="user-box" #registerForm="ngForm" novalidate>
+      <div class="error-item" [hidden]="!showError">
         <i class="fa fa-minus-circle error-icon"></i>
-        <p class="err-msg">未知错误</p>
+        <p class="err-msg" >{{errorText}}</p>
       </div>
       <div class="user-item">
-        <label class="user-label" for="username">
+        <label class="user-label" for="userName">
           <i class="fa fa-user"></i>
         </label>
         <input type="text" class="user-content" id="userName" [formControl]="userName" name="userName" ngModel
                placeholder="请输入用户名" autocomplete="off"/>
       </div>
-      <div class="user-item">
-        <label class="user-label" for="userPwd">
-          <i class="fa fa-lock"></i>
-        </label>
-        <input type="password" class="user-content" id="userPwd" name="userPwd" ngModel
-               placeholder="请输入密码" autocomplete="off"/>
-      </div>
-      <div class="user-item">
-        <label class="user-label" for="userPwd-confirm">
-          <i class="fa fa-lock"></i>
-        </label>
-        <input type="password" class="user-content" id="userPwd-confirm" name="userPwd-confirm" ngModel
-               placeholder="再次请输入密码" autocomplete="off"/>
-      </div>
+
+        <div class="user-item">
+          <label class="user-label" for="userPwd">
+            <i class="fa fa-lock"></i>
+          </label>
+          <input type="password" class="user-content" id="userPwd" name="userPwd" ngModel
+                 placeholder="请输入密码" autocomplete="off"/>
+        </div>
+        <div class="user-item">
+          <label class="user-label" for="userPwd-confirm">
+            <i class="fa fa-lock"></i>
+          </label>
+          <input type="password" class="user-content" id="userPwd-confirm" name="userPwd-confirm" ngModel
+                 placeholder="再次请输入密码" autocomplete="off"/>
+        </div>
+
+
 
       <div class="user-item">
         <label class="user-label" for="phone">
@@ -72,7 +75,7 @@
       </div>
 
 
-      <a class="myBtn myBtn-submit">注册</a>
+      <a class="myBtn myBtn-submit" (click)="onSubmit(registerForm.value)">注册</a>
       <div class="link-item">
         <a class="link" target="_blank">忘记密码</a>
         <a class="link" target="_blank">免费注册</a>
