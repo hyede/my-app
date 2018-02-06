@@ -15,10 +15,16 @@ import { ResultComponent } from './result/result.component';
 import {ServerURLInterceptor} from './util/http.interceptor';
 import {InterceptorService} from 'ng2-interceptors';
 import {LocalStorage} from './util/local.storage';
-import { UserLoginComponent } from './user/user-login/user-login.component';
 import {AppRoutingModule} from './app-routing.module';
-import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { UserPassResetComponent } from './user/user-pass-reset/user-pass-reset.component';
+
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import { HomeComponent } from './home/home.component';
+import {UserLoginComponent} from "app/user/user-login/user-login.component";
+import {UserCenterComponent} from "app/user/user-center/user-center.component";
+import {UserRegisterComponent} from "app/user/user-register/user-register.component";
+import {UserPassResetComponent} from "./user/user-pass-reset/user-pass-reset.component";
+import {UserSidebarComponent} from "./user/user-sidebar/user-sidebar.component";
+
 
 export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions,serverURLInterceptor : ServerURLInterceptor) {
   let service = new InterceptorService(xhrBackend, requestOptions);
@@ -35,9 +41,12 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     HeaderComponent,
     NavSideComponent,
     ResultComponent,
+    HomeComponent,
+    UserCenterComponent,
     UserLoginComponent,
+    UserPassResetComponent,
     UserRegisterComponent,
-    UserPassResetComponent
+    UserSidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +59,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     Config,
     ServerURLInterceptor,
     HttpUtil,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     {
       provide: InterceptorService,
       useFactory: interceptorFactory,

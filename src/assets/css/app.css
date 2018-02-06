@@ -54,14 +54,17 @@ label {
   color: #e80012;
 }
 
-.link-text {
+.link-text{
   color: #999;
+  text-decoration: none;
+}
+
+.link-text:hover{
   text-decoration: none;
 }
 
 .myBtn {
   display: inline-block;
-
   padding: 0 20px;
   height: 40px;
   line-height: 40px;
