@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {NavItemt} from "../model/navItemt.model";
 
 @Component({
   selector: 'app-nav-side',
@@ -27,19 +28,3 @@ export class NavSideComponent implements OnInit {
 
 }
 
-export class NavItemt {
-  public name: string;
-  public desc: string;
-  public href: string;
-  public isCheck: boolean;
-
-  constructor( name: string,
-               desc: string,
-               href: string,  isCheck: boolean) {
-    this.name = name;
-    this.desc = desc;
-    this .href = href;
-    this .isCheck = isCheck;
-
-  }
-}

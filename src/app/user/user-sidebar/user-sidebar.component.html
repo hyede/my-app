@@ -1,5 +1,9 @@
+<div class="page-wrap w">
+  <ul class="nav-side">
+    <li class="nav-item" *ngFor="let item of navItemts; let i = index" [class.active] ="item.isCheck" ><a class="link" [href]="item.href">{{item.name}}</a></li>
+  </ul>
+  <div class="content with-nav">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 
-<p>
-  user-sidebar works!
-</p>
-<router-outlet></router-outlet>

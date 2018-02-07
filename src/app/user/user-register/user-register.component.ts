@@ -8,6 +8,7 @@ import {validate} from "../../util/myutil";
   styleUrls: ['./user-register.component.css']
 })
 export class UserRegisterComponent implements OnInit {
+  title:string="用户注册";
   private userName:FormControl = new FormControl();
   showError:boolean =false;
   errorText:string='';

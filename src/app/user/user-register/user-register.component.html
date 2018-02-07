@@ -1,4 +1,4 @@
-<app-nav-simple></app-nav-simple>
+<app-nav-simple [title]="title"></app-nav-simple>
 <div class="page-wrap w">
   <div class="user-con">
     <div class="user-title">用户注册</div>
@@ -78,7 +78,7 @@
       <a class="myBtn myBtn-submit" (click)="onSubmit(registerForm.value)">注册</a>
       <div class="link-item">
         <a class="link" target="_blank">忘记密码</a>
-        <a class="link" target="_blank">免费注册</a>
+        <!--<a class="link" target="_blank">免费注册</a>-->
       </div>
     </form>
   </div>
