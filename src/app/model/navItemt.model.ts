@@ -6,7 +6,8 @@ export class NavItemt {
 
   constructor( name: string,
                desc: string,
-               href: string,  isCheck: boolean) {
+               href: string,
+               isCheck: boolean) {
     this.name = name;
     this.desc = desc;
     this .href = href;

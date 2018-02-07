@@ -6,6 +6,8 @@ import {UserCenterComponent} from "./user/user-center/user-center.component";
 import {HomeComponent} from "./home/home.component";
 import {UserSidebarComponent} from "./user/user-sidebar/user-sidebar.component";
 import {UserRegisterComponent} from "./user/user-register/user-register.component";
+import {UserPassResetComponent} from "./user/user-pass-reset/user-pass-reset.component";
+import {UserEditComponent} from "./user/user-edit/user-edit.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +17,10 @@ const routes: Routes = [
     children: [
       {path: '', component: UserCenterComponent},
       {path: 'login', component: UserLoginComponent},
-      {path: 'register', component: UserRegisterComponent}
+      {path: 'register', component: UserRegisterComponent},
+      {path: 'userCenter', component: UserCenterComponent},
+      {path: 'userPassReset', component: UserPassResetComponent},
+      {path: 'userEdit', component: UserEditComponent}
     ]
   }
 

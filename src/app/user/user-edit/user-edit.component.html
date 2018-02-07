@@ -1,35 +1,35 @@
 
-<div class="page-wrap" [hidden]="edit">
+<div class="page-wrap">
   <div class="crumb">
     <a class="link">个人中心</a>
-
+    <span>&gt;</span>
+    <a class="link-text">修改个人信息</a>
   </div>
-
   <div class="w">
-    <div class="user-info" >
+    <div class="user-info">
       <div class="form-line">
         <span class="label">用户名：</span>
         <span class="text">{{user.userName}}</span>
       </div>
       <div class="form-line">
         <span class="label">电 话：</span>
-        <span class="text">{{user.phone}}</span>
+        <input class="input" id="phone" autocomplete="off" value="{{user.phone}}" />
       </div>
       <div class="form-line">
         <span class="label">邮 箱：</span>
-        <span class="text">{{user.email}}</span>
+        <input class="input" id="email" autocomplete="off" value="{{user.email}}" />
       </div>
       <div class="form-line">
         <span class="label">问 题：</span>
-        <span class="text">{{user.question}}</span>
+        <input class="input" id="question" autocomplete="off" value="{{user.question}}" />
       </div>
       <div class="form-line">
         <span class="label">答 案：</span>
-        <span class="text">{{user.answer}}</span>
+        <input class="input" id="answer" autocomplete="off" value="{{user.answer}}" />
       </div>
-      <a class="myBtn myBtn-submit" (click)="onEdit()">编辑</a>
+      <span class="myBtn myBtn-submit" (click)="submit()" )>提交</span>
     </div>
+
   </div>
 
 </div>
-<app-user-edit [user]="user"  [hidden]="!edit"></app-user-edit>
