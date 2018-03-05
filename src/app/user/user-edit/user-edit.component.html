@@ -13,21 +13,21 @@
       </div>
       <div class="form-line">
         <span class="label">电 话：</span>
-        <input class="input" id="phone" autocomplete="off" value="{{user.phone}}" />
+        <input class="input" id="phone" autocomplete="off"  [(ngModel)]="user.phone"  name="phone"  />
       </div>
       <div class="form-line">
         <span class="label">邮 箱：</span>
-        <input class="input" id="email" autocomplete="off" value="{{user.email}}" />
+        <input class="input" id="email" autocomplete="off"  [(ngModel)]="user.email" name="email"  />
       </div>
       <div class="form-line">
         <span class="label">问 题：</span>
-        <input class="input" id="question" autocomplete="off" value="{{user.question}}" />
+        <input class="input" id="question" autocomplete="off"  [(ngModel)]="user.question" name="question" value="{{user.question}}" />
       </div>
       <div class="form-line">
         <span class="label">答 案：</span>
-        <input class="input" id="answer" autocomplete="off" value="{{user.answer}}" />
+        <input class="input" id="answer" autocomplete="off"  [(ngModel)]="user.answer" name="answer" value="{{user.answer}}" />
       </div>
-      <span class="myBtn myBtn-submit" (click)="submit()" )>提交</span>
+      <span class="myBtn myBtn-submit" (click)="submit()">提交</span>
     </div>
 
   </div>

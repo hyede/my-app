@@ -1,4 +1,4 @@
-export class NavItemt {
+export class NavItem {
   public name: string;
   public desc: string;
   public href: string;

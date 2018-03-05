@@ -8,14 +8,19 @@ import {User} from '../../model/user.model';
 })
 export class UserEditComponent implements OnInit {
 
-  @Input()
+  @Input('user')
   user: User;
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
+
   }
-  submit(){
+
+  submit() {
     //校验  如果通过 则发送修改请求
+    console.log(JSON.stringify(this.user));
   }
 }

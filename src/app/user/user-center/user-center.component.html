@@ -2,7 +2,6 @@
 <div class="page-wrap" [hidden]="edit">
   <div class="crumb">
     <a class="link">个人中心</a>
-
   </div>
 
   <div class="w">
@@ -30,6 +29,5 @@
       <a class="myBtn myBtn-submit" (click)="onEdit()">编辑</a>
     </div>
   </div>
-
 </div>
-<app-user-edit [user]="user"  [hidden]="!edit"></app-user-edit>
+<app-user-edit [user]="user"  *ngIf="edit"></app-user-edit>

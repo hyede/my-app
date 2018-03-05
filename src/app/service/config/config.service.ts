@@ -5,7 +5,7 @@ import {Injectable} from '@angular/core';
 export class Config {
 
   public appConfig: any = {
-    baseUrl: "http://localhost:8090/witwin-ctts-web"
+    baseUrl:  'http://localhost:8090/witwin-ctts-web'
   };
 
 }

@@ -26,6 +26,8 @@ import {UserPassResetComponent} from './user/user-pass-reset/user-pass-reset.com
 import {UserSidebarComponent} from './user/user-sidebar/user-sidebar.component';
 
 import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserPassUpdateComponent } from './user/user-pass-update/user-pass-update.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
 
 
 export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions,serverURLInterceptor : ServerURLInterceptor) {
@@ -50,7 +52,9 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     UserRegisterComponent,
     UserSidebarComponent,
     UserEditComponent,
-    UserEditComponent
+    UserEditComponent,
+    UserPassUpdateComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

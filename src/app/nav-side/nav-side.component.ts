@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NavItemt} from "../model/navItemt.model";
+import {NavItem} from '../model/navItem.model';
 
 @Component({
   selector: 'app-nav-side',
@@ -9,12 +9,12 @@ import {NavItemt} from "../model/navItemt.model";
 export class NavSideComponent implements OnInit {
 
 
-  navItemts: NavItemt [] = [
-    new NavItemt('第1个商品', '描述1', 'www.baidu.com',true),
-    new NavItemt("第2个商品", "描述2", "www.baidu.com",true),
-    new NavItemt("第3个商品", "描述3", "www.baidu.com",true),
-    new NavItemt("第4个商品", "描述4", "www.baidu.com",true),
-    new NavItemt("第5个商品", "描述5", "www.baidu.com",true)
+  navItems: NavItem [] = [
+    new NavItem('第1个商品', '描述1', 'www.baidu.com',true),
+    new NavItem('第2个商品', '描述2', 'www.baidu.com',true),
+    new NavItem('第3个商品', '描述3', 'www.baidu.com',true),
+    new NavItem('第4个商品', '描述4', 'www.baidu.com',true),
+    new NavItem('第5个商品', '描述5', 'www.baidu.com',true)
   ];
 
   constructor() {
@@ -22,7 +22,7 @@ export class NavSideComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.navItemts.length);
+    console.log(this.navItems.length);
   }
 
 

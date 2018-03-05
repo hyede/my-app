@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NavItemt} from '../../model/navItemt.model';
+import {NavItem} from '../../model/navItem.model';
 
 @Component({
   selector: 'app-user-sidebar',
@@ -8,12 +8,12 @@ import {NavItemt} from '../../model/navItemt.model';
 })
 export class UserSidebarComponent implements OnInit {
 
-  navItemts: NavItemt [] = [
-    new NavItemt('个人中心', '描述1', 'userCenter',true),
-    new NavItemt('我的订单', '描述2', 'userCenter',false),
-    new NavItemt('修改密码', '描述3', 'userPassReset',false),
-    new NavItemt('我---', '描述4', 'userCenter',false),
-    new NavItemt('你----', '描述5',  'userCenter',false)
+  navItemts: NavItem [] = [
+    new NavItem('个人中心', '描述1', 'userCenter',true),
+    new NavItem('我的订单', '描述2', 'userCenter',false),
+    new NavItem('修改密码', '描述3', 'userPassUpdate/2',false),
+    new NavItem('我---', '描述4', 'userCenter',false),
+    new NavItem('你----', '描述5',  'userCenter',false)
   ];
   constructor() { }
 

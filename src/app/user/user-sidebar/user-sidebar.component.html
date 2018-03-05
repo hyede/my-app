@@ -1,6 +1,8 @@
 <div class="page-wrap w">
   <ul class="nav-side">
-    <li class="nav-item" *ngFor="let item of navItemts; let i = index" [class.active] ="item.isCheck" ><a class="link" [routerLink]="item.href" >{{item.name}}</a></li>
+    <li class="nav-item" *ngFor="let item of navItemts; let i = index" [class.active] ="item.isCheck" >
+      <a class="link" [routerLink]="item.href" >{{item.name}}</a>
+    </li>
   </ul>
   <div class="content with-nav ">
     <router-outlet></router-outlet>
