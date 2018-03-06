@@ -12,7 +12,7 @@ import {ProductListComponent} from "./product/product-list/product-list.componen
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'productList', component: ProductListComponent},
+  {path: 'productList/:keyWord', component: ProductListComponent},
   {
     path: 'user',
     component: UserSidebarComponent,
